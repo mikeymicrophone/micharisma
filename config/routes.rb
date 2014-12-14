@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :futurists, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+  match '/futurists/:id/finish_signup' => 'futurists#finish_signup', via: [:get, :patch], :as => :finish_signup
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
