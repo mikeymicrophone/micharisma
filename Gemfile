@@ -16,6 +16,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
 gem 'twitter-bootstrap-rails'
+gem 'less-rails'
 gem 'therubyracer'
 
 group :development, :test do

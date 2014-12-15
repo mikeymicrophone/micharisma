@@ -19,3 +19,5 @@
 config/secrets.yml
 
 config/database.yml
+
+config/initializers/dev_constants.rb
