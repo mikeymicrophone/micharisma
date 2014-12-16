@@ -13,4 +13,12 @@ class ApplicationController < ActionController::Base
       redirect_to finish_signup_path(current_futurist)
     end
   end
+  
+  def find_michael
+    if current_futurist.andand.id == 1
+      return true
+    else
+      redirect_to root_url
+    end
+  end
 end
