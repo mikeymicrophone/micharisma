@@ -25,7 +25,7 @@ class Futurist < ActiveRecord::Base
       # Get the existing futurist by email if the provider gives us a verified email.
       # If no verified email was provided we assign a temporary email and ask the
       # futurist to verify it on the next step via FuturistsController.finish_signup
-      email_is_verified = auth.info.email && (auth.info.verified || auth.info.verified_email)
+      email_is_verified = auth.info.email && (auth.info.verified || auth.info.verified_email || auth.provider == 'github')
       email = auth.info.email if email_is_verified
       futurist = Futurist.where(:email => email).first if email
 
