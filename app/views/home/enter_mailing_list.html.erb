@@ -1,5 +1,5 @@
 <p>
-  To enter the mailing list, please choose an account to connect with.
+  To join the mailing list, connect with an account:
 </p>
 <h2>
   <%= link_to 'Facebook', futurist_omniauth_authorize_path(:provider => :facebook) %>
@@ -16,3 +16,9 @@
 <p>
   <%= link_to 'logout', destroy_futurist_session_path, :method => :delete if current_futurist %>
 </p>
+
+<div class="article" id="newsletter_introduction">
+  <% if @article %>
+    <%= render 'article', :locals => {:article => @article} %>
+  <% end %>
+</div>
