@@ -1,21 +1,26 @@
-<p>
-  To join the mailing list, connect with an account:
-</p>
-<h2>
-  <%= link_to 'Facebook', futurist_omniauth_authorize_path(:provider => :facebook) %>
-</h2>
-<h2>
-  <%#= link_to 'Twitter', futurist_omniauth_authorize_path(:provider => :twitter) %>
-</h2>
-<h2>
-  <%#= link_to 'LinkedIn', futurist_omniauth_authorize_path(:provider => :linked_in) %>
-</h2>
-<h2>
-  <%= link_to 'GitHub', futurist_omniauth_authorize_path(:provider => :github) %>
-</h2>
-<p>
-  <%= link_to 'logout', destroy_futurist_session_path, :method => :delete if current_futurist %>
-</p>
+<% if current_futurist %>
+  <p>
+    <%= link_to 'logout', destroy_futurist_session_path, :method => :delete %>
+  </p>
+<% else %>
+  <div id="squeeze">
+    <p>
+      To join the mailing list, connect with an account:
+    </p>
+    <h2>
+      <%= link_to 'Facebook', futurist_omniauth_authorize_path(:provider => :facebook) %>
+    </h2>
+    <h2>
+      <%#= link_to 'Twitter', futurist_omniauth_authorize_path(:provider => :twitter) %>
+    </h2>
+    <h2>
+      <%#= link_to 'LinkedIn', futurist_omniauth_authorize_path(:provider => :linked_in) %>
+    </h2>
+    <h2>
+      <%= link_to 'GitHub', futurist_omniauth_authorize_path(:provider => :github) %>
+    </h2>
+  </div>
+<% end %>
 
 <div class="article" id="newsletter_introduction">
   <% if @article %>
